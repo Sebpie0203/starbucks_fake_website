@@ -1,0 +1,2429 @@
+@charset "UTF-8";
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 0px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.093);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  z-index: 100;
+}
+
+.nav-icon i {
+  padding: 0 80px;
+  font-size: 42px;
+  color: #00754a;
+}
+
+.nav a {
+  position: relative;
+  padding: 20px 0px;
+  margin: 0 25px;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  font-weight: 800;
+  letter-spacing: 2px;
+  transition: color 0.3s;
+  border-bottom: 5px solid transparent;
+  transition: color 0.5s, border-bottom 0.5s;
+}
+
+.nav a::after, .nav a::before {
+  content: "";
+  position: absolute;
+  top: 57px;
+  width: 0%;
+  height: 5px;
+  background-color: #00754a;
+  transition: 0.3s;
+}
+
+.nav a::after {
+  content: "";
+  left: 0px;
+}
+
+.nav a::before {
+  content: "";
+  right: 0px;
+}
+
+.nav a:hover::after {
+  width: 50%;
+}
+
+.nav a:hover::before {
+  width: 50%;
+}
+
+.nav .nav-icon:hover::after {
+  opacity: 0;
+}
+
+.fa-chevron-down {
+  margin-left: 10px;
+}
+
+.nav-store {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nav-store .find-us {
+  text-transform: capitalize;
+  font-size: 14px;
+}
+
+.find-us i {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+.nav-store p {
+  font-size: 16px;
+  margin-right: 40px;
+}
+
+.nav-store .fa-globe {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 50vh;
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+
+.header-img {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  background-image: url("../img/header/coffee-4618705_640.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 15px;
+  z-index: 10;
+}
+
+.header-title {
+  width: 30%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  margin-left: 40px;
+  font-size: 32px;
+  letter-spacing: 2px;
+  color: wheat;
+}
+
+.header-btn {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  background-color: wheat;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 20px;
+  margin-left: 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.header-btn:hover {
+  background-color: rgba(204, 204, 204, 0.708);
+}
+
+.header-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 60vh;
+  background-color: rgba(46, 40, 51, 0.669);
+  margin-right: 0;
+  z-index: -1;
+}
+
+.section-cards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  position: relative;
+  width: 48%;
+  height: 800px;
+  margin: 50px auto 0;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card-left {
+  background-color: #00754a;
+  margin-left: 0;
+}
+
+.card-right {
+  margin-right: 0;
+  background-color: #f7f7f7;
+  color: black;
+}
+
+.card-img {
+  width: 100%;
+  height: 45%;
+  background-size: cover;
+  background-position: center;
+}
+
+.one {
+  background-image: url("../img/sections/Web 727x373.jpg");
+}
+
+.two {
+  background-image: url("../img/sections/banner.jpg");
+}
+
+.three {
+  background-image: url("../img/sections/caffe_in_hands.jpg");
+}
+
+.four {
+  background-image: url("../img/sections/personalization_new.jpg");
+}
+
+.five {
+  background-image: url("../img/sections/delivery_new.jpg");
+}
+
+.six {
+  background-image: url("../img/sections/mountains.jpg");
+}
+
+.seven {
+  background-image: url("../img/sections/about_us_new.jpg");
+}
+
+.eight {
+  background-image: url("../img/sections/man_with_caffee.jpg");
+}
+
+.card-details {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  padding: 0 40px;
+  color: wheat;
+}
+
+.card-title {
+  margin-top: 40px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.card-text {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.text-two {
+  color: black;
+  font-size: 18px;
+}
+
+.lavender-coffee {
+  margin-top: 30px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.lavender-caffee p {
+  margin-bottom: 5px;
+}
+
+.card-btn {
+  background-color: wheat;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  margin: 20px 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-btn:hover {
+  background-color: rgba(204, 204, 204, 0.708);
+}
+
+.btn-left {
+  background-color: #00754a;
+}
+
+.btn-left:hover {
+  background-color: rgba(0, 117, 74, 0.7921568627);
+}
+
+.find-store {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60vh;
+  margin: 100px 0;
+  border-radius: 15px;
+  overflow: hidden;
+  color: wheat;
+}
+
+.map {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.map-title {
+  position: absolute;
+  top: 10%;
+  left: 3%;
+  font-size: 24px;
+  letter-spacing: 2px;
+  z-index: 10;
+}
+
+.map-text {
+  position: absolute;
+  top: 25%;
+  left: 3%;
+  width: 300px;
+  font-size: 18px;
+  z-index: 10;
+}
+
+.map-btn {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  margin: 20px 40px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.map-btn:hover {
+  background-color: rgba(204, 204, 204, 0.708);
+}
+
+.map-bg {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background-color: #00754a;
+}
+
+.contact {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  position: relative;
+  background-color: #1e3932;
+}
+
+.contact-icon .fa-rebel {
+  padding-top: 85px;
+  padding-left: 50px;
+  font-size: 42px;
+  width: 160px;
+  text-align: center;
+  color: #00754a;
+}
+
+.contact-about-us {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 100px 50px;
+}
+
+.about-us-title {
+  font-size: 18px;
+  color: white;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.contact-about-us a {
+  margin-bottom: 20px;
+  color: #638b81;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.contact-about-us a:hover {
+  color: white;
+}
+
+.contact-privacy-policy {
+  width: 100%;
+  position: absolute;
+  top: 60%;
+  left: 210px;
+  margin-top: 100px;
+}
+
+.contact-privacy-policy a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #638b81;
+  margin-right: 30px;
+  transition: color 0.3s;
+}
+
+.contact-privacy-policy a:hover {
+  color: white;
+}
+
+.contact-social-icons {
+  position: absolute;
+  top: 70%;
+  left: 200px;
+  margin-top: 100px;
+}
+
+.contact-social-icons i {
+  font-size: 18px;
+  color: white;
+  margin-left: 10px;
+}
+
+.contact-social-icons i:hover {
+  color: #638b81;
+}
+
+.footer {
+  width: 100%;
+  height: 200px;
+  background-color: #1e3932;
+}
+
+.footer p {
+  margin-left: 210px;
+  color: white;
+  font-size: 16px;
+}
+
+.header-menu {
+  position: relative;
+  height: 180vh;
+  overflow: hidden;
+}
+
+.header-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/ai-generated-8675363_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -300px 200px rgba(0, 0, 0, 0.817) inset;
+}
+
+.header-menu-title {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 50%;
+  height: 200px;
+  color: white;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.header-menu-btn {
+  width: 350px;
+  position: absolute;
+  left: 15%;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-one {
+  top: 60%;
+  background-color: white;
+}
+
+.btn-one:hover {
+  background-color: rgba(204, 204, 204, 0.708);
+}
+
+.btn-two {
+  top: 70%;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-two:hover {
+  background-color: rgba(204, 204, 204, 0.215);
+}
+
+.header-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  height: 300vh;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 150px 150px 100px 150px;
+}
+
+.header-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.header-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.header-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-card-img {
+  width: 50%;
+  height: 500px;
+  margin-top: 100px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  overflow: hidden;
+}
+
+.header-card-img .card-title-text {
+  font-size: 16px;
+  letter-spacing: normal;
+}
+
+.img-one {
+  margin-right: 20px;
+}
+
+.img-two {
+  margin-left: 20px;
+}
+
+.header-card {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-one {
+  background-image: url("../img/menu_html/coffee_menu.jpg");
+}
+
+.card-two {
+  background-image: url("../img/menu_html/sandwitch_menu.jpg");
+}
+
+.card-title-menu {
+  margin: 20px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.card-title-text {
+  margin: 50px 20px;
+}
+
+.card-btn-menu {
+  border: 5px solid red;
+  padding: 10px 30px;
+  border-radius: 35px;
+  font-size: 16px;
+  margin: 20px;
+  border: 1px solid #00754a;
+  background-color: transparent;
+  font-weight: bold;
+  color: #00754a;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-btn-menu:hover {
+  background-color: rgba(0, 117, 74, 0.1058823529);
+}
+
+.header-allergens {
+  margin-top: 50px;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.header-card p {
+  letter-spacing: normal;
+  font-size: 16px;
+}
+
+.footer {
+  z-index: 100;
+}
+
+.drinks-menu {
+  position: relative;
+  height: 320vh;
+  overflow: hidden;
+}
+
+.drinks-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/drinks/london-1932166_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.drinks-menu-btn {
+  width: 350px;
+  position: absolute;
+  left: 15%;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-one {
+  top: 60%;
+  background-color: white;
+}
+
+.btn-one:hover {
+  background-color: rgba(204, 204, 204, 0.708);
+}
+
+.btn-two {
+  top: 70%;
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+}
+
+.btn-two:hover {
+  background-color: rgba(204, 204, 204, 0.215);
+}
+
+.drinks-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.drinks-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.drinks-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.drinks-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.drinks-card-img {
+  position: relative;
+  width: 50%;
+  height: 360px;
+  margin-top: 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  overflow: hidden;
+}
+
+.img-one {
+  margin-right: 20px;
+}
+
+.img-two {
+  margin-left: 20px;
+}
+
+.drinks-card {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.drink-one {
+  background-image: url("../img/menu_html/drinks/caffee/Espresso.jpeg.webp");
+}
+
+.drink-two {
+  background-image: url("../img/menu_html/drinks/caffee/Filter Coffee_0.jpeg.webp");
+}
+
+.drink-three {
+  background-image: url("../img/menu_html/drinks/caffee/Cold-Brew-Coffee .jpg.webp");
+}
+
+.drink-four {
+  background-image: url("../img/menu_html/drinks/caffee/Mango_Dragonfruit_Refresha_Slim_GREEN-WOLT.jpg.webp");
+}
+
+.drink-five {
+  background-image: url("../img/menu_html/drinks/caffee/English-Breakfast-Tea.jpeg");
+}
+
+.drink-six {
+  background-image: url("../img/menu_html/drinks/caffee/Double-Chocolatey-Chip-Cream-Frappuccino® .jpg");
+}
+
+.drink-seven {
+  background-image: url("../img/menu_html/drinks/caffee/Classic-Hot-Chocolate .jpeg");
+}
+
+.card-title-menu {
+  margin-bottom: 40px;
+}
+
+.header-card-btn-menu {
+  position: absolute;
+  top: 75%;
+  left: 0;
+  border: 5px solid red;
+  padding: 10px 30px;
+  border-radius: 35px;
+  font-size: 16px;
+  margin: 20px;
+  border: 1px solid #00754a;
+  background-color: transparent;
+  font-weight: bold;
+  color: #00754a;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.header-card-btn-menu:hover {
+  background-color: rgba(0, 117, 74, 0.1098039216);
+}
+
+.food-menu {
+  position: relative;
+  height: 220vh;
+  overflow: hidden;
+}
+
+.food-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/ai-generated-8675363_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.food-menu-btn {
+  width: 400px;
+  position: absolute;
+  left: 15%;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.292);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.food-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.food-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.food-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.food-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.food-card-img {
+  width: 50%;
+  height: 400px;
+  margin-top: 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.096);
+  overflow: hidden;
+}
+
+.food-card {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.food-one {
+  background-image: url("../img/menu_html/food/Bajgiel_1 kopia_Easy-Resize.com_.jpg.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.food-two {
+  background-image: url("../img/menu_html/food/Choco.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.food-three {
+  background-image: url("../img/menu_html/food/Sernik-nowojorski.jpeg");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.food-four {
+  background-image: url("../img/menu_html/food/Caramel-waffles.jpeg");
+}
+
+.card-title-menu {
+  margin-bottom: 40px;
+}
+
+.card-btn-menu {
+  text-decoration: none;
+}
+
+.espresso-menu {
+  position: relative;
+  height: 670vh;
+  overflow: hidden;
+}
+
+.espresso-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.espresso-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.31);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.espresso-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.espresso-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.espresso-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.espresso-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.espresso-card-img {
+  width: 50%;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.espresso-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.espresso-one {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Caffè-Latte.jpeg");
+}
+
+.espresso-two {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Vanilla_Latte_Mug_GREEN_OPT2_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.espresso-three {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Latte-Macchiato.jpeg");
+}
+
+.espresso-four {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Caramel-Macchiato.jpeg");
+}
+
+.espresso-five {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Cappuccino.jpeg.webp");
+}
+
+.espresso-six {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Caffè-Americano.jpeg");
+}
+
+.espresso-seven {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Espresso.jpeg.webp");
+}
+
+.espresso-eight {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Flat-White.jpeg");
+}
+
+.espresso-nine {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/Caffè-Mocha.jpeg");
+}
+
+.espresso-ten {
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/White-Chocolate-Mocha.jpeg");
+}
+
+.espresso-title {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.espresso-header-img {
+  position: absolute;
+  bottom: 9%;
+  left: 2px;
+  width: 100%;
+  height: 600px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.espresso-header-btn {
+  position: absolute;
+  bottom: 6%;
+  left: 20%;
+  padding: 13px 30px;
+  background-color: white;
+  color: #00754a;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.espresso-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.espresso-card-allergens {
+  margin-top: 800px;
+}
+
+.espresso-allergens {
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.brewed-menu {
+  position: relative;
+  height: 250vh;
+  overflow: hidden;
+}
+
+.brewed-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.brewed-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.287);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.brewed-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 250px 100px 150px;
+}
+
+.brewed-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.brewed-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  opacity: 0.6;
+}
+
+.brewed-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.brewed-card-img {
+  width: 50%;
+  height: 400px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.brewed-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.brewed-one {
+  background-image: url("../img/menu_html/drinks/caffee/brewedCoffee/Filter-Coffee.jpeg");
+}
+
+.brewed-title {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.brewed-header-img {
+  position: absolute;
+  bottom: 25%;
+  left: 2px;
+  width: 100%;
+  height: 600px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.brewed-header-btn {
+  position: absolute;
+  bottom: 16%;
+  left: 20%;
+  padding: 13px 30px;
+  background-color: white;
+  color: #00754a;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.brewed-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.brewed-card-allergens {
+  margin-top: 800px;
+}
+
+.iced-coffee-menu {
+  position: relative;
+  height: 400vh;
+  overflow: hidden;
+}
+
+.iced-coffee-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.iced-coffee-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.254);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.iced-coffee-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.iced-coffee-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.iced-coffee-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.iced-coffee-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.iced-coffee-card-img {
+  width: 50%;
+  height: 350px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.iced-coffee-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.iced-coffee-one {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Cold-Brew-Coffee .jpeg");
+}
+
+.iced-coffee-two {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Cold-Brew-Latte.jpeg");
+}
+
+.iced-coffee-three {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Cafe_Latte_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.iced-coffee-four {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Caramel_Macchiato_Glass_GREEN_2023_1_Easy-Resize.com_.jpg.webp");
+}
+
+.iced-coffee-five {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_White_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.iced-coffee-six {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.iced-coffee-seven {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.iced-coffee-title {
+  font-size: 20px;
+  margin-top: 20px;
+  height: 500px;
+}
+
+.iced-coffee-header-img {
+  position: absolute;
+  bottom: 12%;
+  left: 2px;
+  width: 100%;
+  height: 600px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.iced-coffee-header-btn {
+  position: absolute;
+  bottom: 8%;
+  left: 20%;
+  padding: 13px 30px;
+  background-color: white;
+  color: #00754a;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.iced-coffee-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.iced-coffee-card-allergens {
+  margin-top: 800px;
+}
+
+.iced-coffee-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.refresha-menu {
+  position: relative;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.refresha-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.refresha-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 400px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.236);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.refresha-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.refresha-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.refresha-text p {
+  margin-top: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.refresha-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.refresha-card-img {
+  width: 50%;
+  height: 600px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.refresha-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.refresha-one {
+  background-image: url("../img/menu_html/drinks/caffee/refreshaDrink/Mango_Dragonfruit_Refresha_Slim_GREEN-Just Eat.jpg.webp");
+}
+
+.refresha-two {
+  background-image: url("../img/menu_html/drinks/caffee/refreshaDrink/Dragonfruit_Refresha_Slim_GREEN-MOP.jpg.webp");
+}
+
+.refresha-title {
+  font-size: 24px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.tea-menu {
+  position: relative;
+  height: 450vh;
+  overflow: hidden;
+}
+
+.tea-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.tea-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tea-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.tea-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.tea-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.tea-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tea-card-img {
+  width: 50%;
+  height: 350px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.tea-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.tea-one {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Mint-Citrus-Tea.jpeg");
+}
+
+.tea-two {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Chai-Tea.jpeg");
+}
+
+.tea-three {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Hibiscus-Herbal-Blend-Tea.jpeg");
+}
+
+.tea-four {
+  background-image: url("../img/menu_html/drinks/caffee/tea/English-Breakfast-Tea.jpeg");
+}
+
+.tea-five {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_White_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-six {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-seven {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-eight {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-nine {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-title {
+  font-size: 24px;
+  margin-top: 20px;
+  height: 350px;
+}
+
+.tea-header-img {
+  position: absolute;
+  bottom: 12%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.tea-header-btn {
+  position: absolute;
+  bottom: 8%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.tea-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.tea-card-allergens {
+  margin-top: 700px;
+}
+
+.tea-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.frappuccino-menu {
+  position: relative;
+  height: 650vh;
+  overflow: hidden;
+}
+
+.tea-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.tea-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tea-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.tea-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.tea-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.tea-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tea-card-img {
+  width: 50%;
+  height: 370px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.tea-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.tea-one {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Mint-Citrus-Tea.jpeg");
+}
+
+.tea-two {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Chai-Tea.jpeg");
+}
+
+.tea-three {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Hibiscus-Herbal-Blend-Tea.jpeg");
+}
+
+.tea-four {
+  background-image: url("../img/menu_html/drinks/caffee/tea/English-Breakfast-Tea.jpeg");
+}
+
+.tea-five {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_White_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-six {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-seven {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-eight {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-nine {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-title {
+  font-size: 20px;
+  margin-top: 20px;
+  height: 350px;
+}
+
+.frappuccino-header-img {
+  position: absolute;
+  bottom: 8%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.frappuccino-header-btn {
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.frappuccino-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.frappuccino-card-allergens {
+  margin-top: 700px;
+}
+
+.frappuccino-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.hot-chocolate-menu {
+  position: relative;
+  height: 220vh;
+  overflow: hidden;
+}
+
+.tea-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/menu_header.jfif");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.tea-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tea-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 200px 150px 100px 150px;
+}
+
+.tea-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.tea-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.tea-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tea-card-img {
+  width: 50%;
+  height: 370px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.tea-card {
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.tea-one {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Mint-Citrus-Tea.jpeg");
+}
+
+.tea-two {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Chai-Tea.jpeg");
+}
+
+.tea-three {
+  background-image: url("../img/menu_html/drinks/caffee/tea/Hibiscus-Herbal-Blend-Tea.jpeg");
+}
+
+.tea-four {
+  background-image: url("../img/menu_html/drinks/caffee/tea/English-Breakfast-Tea.jpeg");
+}
+
+.tea-five {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_White_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-six {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Mocha_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-seven {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-eight {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-nine {
+  background-image: url("../img/menu_html/drinks/caffee/icedCoffee/Iced_Americano_Glass_GREEN_2023_Easy-Resize.com_.jpg.webp");
+}
+
+.tea-title {
+  font-size: 20px;
+  margin-top: 20px;
+  height: 350px;
+}
+
+.hot-chocolate-header-img {
+  position: absolute;
+  bottom: 23%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.hot-chocolate-header-btn {
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.hot-chocolate-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.hot-chocolate-card-allergens {
+  margin-top: 700px;
+}
+
+.hot-chocolate-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.sandwiches-menu {
+  position: relative;
+  height: 270vh;
+  overflow: hidden;
+}
+
+.sandwiches-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/sandwich-4235110_1920.jpg");
+  background-size: cover;
+  background-position: right;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.sandwiches-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.sandwiches-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 100px 150px 100px 150px;
+}
+
+.sandwiches-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.sandwiches-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.sandwiches-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sandwiches-card-img {
+  position: relative;
+  width: 50%;
+  height: 230px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.sandwiches-card-img a {
+  position: absolute;
+  top: 75%;
+  left: 0%;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  color: #00754a;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.sandwiches-card-img a:hover {
+  background-color: rgba(0, 117, 74, 0.0941176471);
+}
+
+.sandwiches-header-img {
+  position: absolute;
+  bottom: 23%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.sandwiches-header-btn {
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.sandwiches-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.sandwiches-card-allergens {
+  margin-top: 800px;
+}
+
+.sandwiches-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.pastries-menu {
+  position: relative;
+  height: 250vh;
+  overflow: hidden;
+}
+
+.pastries-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/pastries/bread-101636_1280.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pastries-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 100px 150px 100px 150px;
+}
+
+.pastries-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.pastries-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.pastries-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pastries-card-img {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.pastries-card {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.pastries-title {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.pastries-one {
+  background-image: url("../img/menu_html/food/pastries/Pomarańcza.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-two {
+  background-image: url("../img/menu_html/food/pastries/Migdał.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-three {
+  background-image: url("../img/menu_html/food/pastries/Choco.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-four {
+  background-image: url("../img/menu_html/food/pastries/MicrosoftTeams-image(8).png");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-header-img {
+  position: absolute;
+  bottom: 23%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.pastries-header-btn {
+  position: absolute;
+  bottom: 15%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.pastries-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.pastries-card-allergens {
+  margin-top: 800px;
+}
+
+.pastries-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.cakes-menu {
+  position: relative;
+  height: 450vh;
+  overflow: hidden;
+}
+
+.cakes-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/ai-generated-8675363_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -300px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cakes-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 100px 150px 100px 150px;
+}
+
+.cakes-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.cakes-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.cakes-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cakes-card-img {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.cakes-card {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.cakes-title {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.cakes-one {
+  background-image: url("../img/menu_html/food/cakes/Sernik-nowojorski.jpeg");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-two {
+  background-image: url("../img/menu_html/food/cakes/Sernik-truskawkowy.png");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-three {
+  background-image: url("../img/menu_html/food/pastries/Choco.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-four {
+  background-image: url("../img/menu_html/food/pastries/MicrosoftTeams-image(8).png");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-header-img {
+  position: absolute;
+  bottom: 13%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.cakes-header-btn {
+  position: absolute;
+  bottom: 8%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cakes-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.cakes-card-allergens {
+  margin-top: 800px;
+}
+
+.cakes-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+.impulse-menu {
+  position: relative;
+  height: 300vh;
+  overflow: hidden;
+}
+
+.impulse-menu-img {
+  width: 35%;
+  height: 100vh;
+  background-image: url("../img/menu_html/food/impulse/cookies-2599717_1920.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  box-shadow: 0px -300px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-menu-btn {
+  position: absolute;
+  left: 15%;
+  width: 350px;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.263);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.impulse-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 65%;
+  position: sticky;
+  background-image: linear-gradient(147deg, #f5f5f5 0%, #fffafa 74%);
+  padding: 100px 150px 100px 150px;
+}
+
+.impulse-text h2 {
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.impulse-text p {
+  margin-top: 20px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+}
+
+.impulse-cards {
+  display: flex;
+  justify-content: space-between;
+}
+
+.impulse-card-img {
+  position: relative;
+  width: 50%;
+  height: 300px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.impulse-card {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+}
+
+.impulse-title {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.impulse-one {
+  background-image: url("../img/menu_html/food/cakes/Sernik-nowojorski.jpeg");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-two {
+  background-image: url("../img/menu_html/food/cakes/Sernik-truskawkowy.png");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-three {
+  background-image: url("../img/menu_html/food/pastries/Choco.png.webp");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-four {
+  background-image: url("../img/menu_html/food/pastries/MicrosoftTeams-image(8).png");
+  box-shadow: 0px -50px 150px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-header-img {
+  position: absolute;
+  bottom: 18%;
+  left: 2px;
+  width: 100%;
+  height: 500px;
+  background-image: url("../img/menu_html/drinks/caffee/espressoDrinks/starbucks1281880_1920.jpg");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  box-shadow: 0px -200px 300px rgba(0, 0, 0, 0.817) inset;
+}
+
+.impulse-header-btn {
+  position: absolute;
+  bottom: 12%;
+  left: 20%;
+  background-color: white;
+  color: #00754a;
+  padding: 13px 30px;
+  border-radius: 35px;
+  font-size: 18px;
+  border: 1px solid #00754a;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.impulse-header-btn:hover {
+  background-color: rgba(0, 117, 74, 0.0862745098);
+}
+
+.impulse-card-allergens {
+  margin-top: 800px;
+}
+
+.impulse-allergens {
+  font-size: 18px;
+  letter-spacing: 2px;
+}/*# sourceMappingURL=style.css.map */
